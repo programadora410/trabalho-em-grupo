@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{ /* cor de Fundo*/
+    background-color: #253f62;
+}
+header { /* cabeçalho*/
+    position: fixed;
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    padding: 20px;
+}
+.titulo h3{ /* Sobre o Titulo */
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: 'Comfortaa', cursive;
+    color: #adf8a0;
+    text-shadow: 1px 1px 0 #000;
+
+}
+.titulo span{ /*cor do titulo*/
+    color: #253f62;
+}
+.barra { /*Barra de menu*/
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    margin-top: 70px;
+    padding-top: 30px;
+    right: 0;
+    background: #adf8a0;
+    transition: 0.5s;
+    transition-property: right;
+}
+ul { /*retira marcação da lista*/
+    list-style-type: none;
+}
+.barra a{ /*visual da barra menu*/
+    font-family: 'Sora', sans-serif;
+    color: black;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+    text-decoration: none;
+}
+.barra a:hover{
+    background: #253f62;
+    color: white;
+}
+.barra ion-icon{ /* icones da barra de menu*/
+    padding-right: 25px;
+}
+label #barra_btn{ /* hamburguer do menu*/
+    z-index: 1;
+    position: fixed;
+    right: 25px;
+    color: black;
+    font-size: 25px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+label #barra_btn:hover{
+    color: #006eff;
+}
+#check:checked ~ .barra{ /*posição do hamburguer menu*/
+    right: -190px;
+}
+#check:checked ~ .barra a span{ 
+    display: none;
+}
+#check:checked ~ .barra a{ /* efeito de transição do menu*/
+    font-size: 20px;
+    margin-right: 200px;
+    width: 80px;
+    transition: 0.5s;
+    transition-property: color;
+}
+#check{ /* retira efeitos de programação*/
+    display:none;
+}
+
+.akihabara {
+    height: 900px;
+    width: 1700px;
+    transition: 0.5s;
+    margin-top: 150px;
+}
+
+
+#check:checked ~ .akihabara{
+    margin-right: 150px;
+}
+
+img { /*elementos da imagem principal*/
+    border: 20px solid white;   
+}
+
+.caixadial {
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 20px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 100px;
+    cursor: pointer;       
+    justify-content: center;       
+    }
+
+.caixadial2 {
+        border: none;
+        color: rgb(0, 0, 0);
+        padding: 20px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 0px;
+        cursor: pointer;       
+        justify-content: center;       
+        }
+
+        footer {
+            width: 100%;
+            min-height: 250px;
+            background: #ffff;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            text-align: center;
+        }
+        footer .boxs {
+            width: 320px;
+            min-height: 150px;
+            padding: 20px;
+        }
+        .boxs h2{
+            color: black;
+            margin-bottom: 20px;
+        }
+        .boxs ul li {
+            margin: 10px 0px;
+            list-style: none;
+        
+        }
+        .boxs ul li a {
+            color: black;
+            text-decoration: none;
+        }
+        .boxs ul li a:hover {
+            color: #adf8a0;
+        }
+        @media(max-width: 950px)
+        {
+            footer{
+                flex-direction: column;
+            }
+        }

@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    outline: none;
+}
+:root {
+    --azul: #253f62;
+    --verde: #adf8a0;
+}
+html, 
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+header {
+    width: 100%;
+    height: 500px;
+    background: var(--azul);
+}
+
+.content {
+    max-width: 1000px;
+    min-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.content .header-block {
+    max-width: 1000px;
+    min-width: 300px;
+    height: 450px;
+    background: #ffff;
+    border-radius: 8px;
+    box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
+    padding: 10px;
+}
+.slider {
+    margin: 25px auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+.slides {
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+.slides input{
+    display: none;
+}
+.slide {
+    width: 25%;
+    position: relative;
+    transition: 1s;
+}
+.slide img{
+    width: 800px;
+}
+.manual-navigation {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+.manual-btn {
+    border: 2px solid #ffff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+.manual-btn:hover{
+    background-color: #ffff;
+}
+/* o checked aqui funciona para trocar as imagens de uma para outra*/
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+.navigation-auto div{
+    border: 2px solid #20a6ff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+.navigation-auto div:not(:last-child){
+    margin-right: 40px
+}
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: #ffff;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: var(--azul);
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: #ffff;
+}
+section .catalog {
+    width: 1500px;
+    padding: 100px;
+}
+section .filter-card {
+    width: 1000px;
+    height: 150px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 8px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.search-input {
+    width: 700px;
+    height: 50px;
+    border: none;
+    border-radius: 4px 0px 0px 4px;
+    text-indent: 10px;
+}
+.search-button {
+    width: 150px;
+    height: 50px;
+    border-radius: 0px 4px 4px 0px;
+    border: none;
+    background: var(--azul);
+    color: white;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: 0.2s ease;
+}
+.search-button:hover{
+    background: var(--verde);
+    color: var(--azul);
+}
+.title-wrapper-catalog {
+    margin-top: 200px;
+    padding-bottom: 20px;   
+}
+section .card-wrapper {
+    max-width: 1000px;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(270px, 1fr));
+    grid-gap: 30px;
+    padding: 50px;
+    transform: translateX(35%);
+}
+h1 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: 'Comfortaa', cursive;
+    color: #adf8a0;
+    text-shadow: 1px 1px 0 #000;
+}
+.barra {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    margin-top: 30px;
+    margin-right: 2px;
+    right: 0;
+    background: #adf8a0;
+    transition: 0.5s;
+    transition-property: right;
+}
+ul {
+    list-style-type: none;
+}
+.barra a{
+    font-family: 'Sora', sans-serif;
+    color: black;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+    text-decoration: none;
+}
+.barra a:hover{
+    background: #253f62;
+    color: white;
+}
+/* esses são os ícones que eu peguei online mesmo do menu*/
+.barra ion-icon{
+    padding-right: 25px;
+}
+/* fiz um label para colocar meu menu hamburguer e ele responde ao cursor*/
+label #barra_btn{
+    z-index: 1;
+    position: absolute;
+    right: 25px;
+    color: #ffff;
+    font-size: 25px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+label #barra_btn:hover{
+    color: #006eff;
+}
+/* aqui foi onde eu tive a ideia de usar checkbox: coloquei pra check executar
+coisas diferentes quando for checado, no caso da barra ela se esconde pra direita*/
+#check:checked ~ .barra{
+    display: none;
+}
+/* o texto do menu some*/
+#check:checked ~ .barra a span{
+    display: none;
+}
+/* aqui foi propriedade do texto que tem no menu e uma transition pra ter uma suavidade
+na animação*/
+#check:checked ~ .barra a{
+    font-size: 20px;
+    margin-right: 450px;
+    width: 80px;
+    transition: 0.5s;
+    transition-property: color;
+}
+/*coloquei display none no check pra ele não aparecer em lugar nenhum e não
+ficar feio o site*/
+#check{
+    display:none;
+}
+footer {
+    width: 100%;
+    min-height: 250px;
+    background: var(--azul);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+footer .boxs {
+    width: 320px;
+    min-height: 150px;
+    padding: 20px;
+}
+.boxs h2{
+    color: white;
+    margin-bottom: 20px;
+}
+.boxs ul li {
+    margin: 10px 0px;
+    list-style: none;
+
+}
+.boxs ul li a {
+    color: #ddd;
+    text-decoration: none;
+}
+.boxs ul li a:hover {
+    color: var(--verde);
+}
+@media(max-width: 950px)
+{
+    footer{
+        flex-direction: column;
+    }
+}

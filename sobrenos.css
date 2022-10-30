@@ -1,0 +1,267 @@
+/*trabalhar com border-box na página, posso estar errado, mas esse foi o 
+único jeito que eu encontrei de ter uma responsividade fácil*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* html e body pra ter uma posição relative e height 100% pra poder ter a barra de scrol*/
+html, body{
+    height: 100%;
+    position: relative;
+    background-color: #253f62;
+}
+/* o header em branco e absolute porque eu quero que ele fique só lá em cima
+no cabeçalho mesmo*/
+header {
+    position: absolute;
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    padding: 20px;
+}
+/* esse é o título da página, no caso, o nome da nossa empresa e euq ueria que
+ele ficasse sem margem, com shadow, que o X dele mudasse um pouco e que ele fosse inteiro em 
+caixa alta */
+.titulo h3{
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: 'Comfortaa', cursive;
+    color: #adf8a0;
+    text-shadow: 1px 1px 0 #000;
+    transform: translateX(-2%);
+}
+/* coloquei um span pra mudar a cor só do TOUR*/
+.titulo span{
+    color: #253f62;
+}
+/* aqui começa a brincadeira, eu fiz uma checkboxproque eu queria um sidebar
+mas não sei mexer com javascript direito então eu fiz numa checkbox mesmo e queria que a barra
+fosse verde com posição absolute e pra direita.*/
+.barra {
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    margin-top: 70px;
+    right: 0;
+    background: #adf8a0;
+    transition: 0.5s;
+    transition-property: right;
+}
+ul {
+    list-style-type: none;
+}
+/* aqui são os botões do menu que eu usei transition pra ter uma animaçãozinha
+quando for clicado*/
+.barra a{
+    font-family: 'Sora', sans-serif;
+    color: black;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+    text-decoration: none;
+}
+/* hover para quando você for passar o mouse ele mudar as cores dos botões*/
+.barra a:hover{
+    background: #253f62;
+    color: white;
+}
+/* esses são os ícones que eu peguei online mesmo do menu*/
+.barra ion-icon{
+    padding-right: 25px;
+}
+/* fiz um label para colocar meu menu hamburguer e ele responde ao cursor*/
+label #barra_btn{
+    z-index: 1;
+    position: absolute;
+    right: 25px;
+    color: black;
+    font-size: 25px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+label #barra_btn:hover{
+    color: #006eff;
+}
+/* aqui foi onde eu tive a ideia de usar checkbox: coloquei pra check executar
+coisas diferentes quando for checado, no caso da barra ela se esconde pra direita*/
+#check:checked ~ .barra{
+    right: -170px;
+    display: none;
+}
+/* o texto do menu some*/
+#check:checked ~ .barra a span{
+    display: none;
+}
+/* aqui foi propriedade do texto que tem no menu e uma transition pra ter uma suavidade
+na animação*/
+#check:checked ~ .barra a{
+    display: none;
+    font-size: 20px;
+    margin-right: 450px;
+    width: 80px;
+    transition: 0.5s;
+    transition-property: color;
+}
+/*coloquei display none no check pra ele não aparecer em lugar nenhum e não
+ficar feio o site*/
+#check{
+    display:none;
+}
+/* isso aqui é só o título da primeira imagem, experiência RV e eu coloquei
+como display inline e mais uma transition*/
+h1 {
+    margin-top: 250px;
+    text-align: center;
+    background-color: white;
+    font-size: 50px;
+    display: inline;
+    transition: 0.5s;
+    font-family: 'Comfortaa', cursive;
+
+}
+h3 {
+    margin-top: 250px;
+    text-align: center;
+    background-color: white;
+    font-size: 50px;
+    display: inline;
+    transition: 0.5s;
+    font-family: 'Comfortaa', cursive;
+
+}
+/*fiz uma section pra seprar o texto bonitinho de baixo*/
+section.explicacao {
+    height: 200px;
+    text-align: center;
+    background-color: white;
+    font-size: 20px;
+    display: inline;
+    transition: 0.5s;
+    font-family: 'Bellota Text', cursive;
+}
+/*aqui é a primeira imagem*/
+.vr {
+    height: 400px;
+    width: 720px;
+    transition: 0.5s;
+    margin-top: 150px;
+}
+.texto {
+    justify-content: center;
+}
+/*animação na imagem também*/
+#check:checked ~ .vr{
+    margin-right: 50px;
+    margin-left: 600px;
+}
+img {
+    
+    border: 8px solid white;
+    
+}
+div {
+    transition: 0.5s;
+    transition-property: right;
+}
+/*animação no titulo*/
+#check:checked ~ h1{
+    margin-right: 50px;
+    margin-left: 750px;
+}
+#check:checked ~ h3{
+    margin-right: 50px;
+    margin-left: 790px;
+}
+/*eu queria fazer animação no texto também, mas infelizmente não consegui
+e não sei dizer o porquÊ*/
+#check:checked ~ div{
+    text-align: center;
+    transition: 0.5s;
+    transition-property: right;
+}
+iframe {
+    height: 400px;
+    width: 720px;
+    transition: 0.5s;
+    margin-top: 150px;
+}
+#check:checked ~ iframe{
+    text-align: center;
+    transition: 0.5s;
+    transition-property: right;
+}
+h4 {
+    margin-top: 250px;
+    text-align: center;
+    background-color: white;
+    font-size: 50px;
+    display: inline;
+    transition: 0.5s;
+    font-family: 'Comfortaa', cursive;
+}
+h5 {
+    margin-top: 250px;
+    text-align: center;
+    background-color: white;
+    font-size: 50px;
+    display: inline;
+    transition: 0.5s;
+    font-family: 'Comfortaa', cursive;
+}
+#check:checked ~ h4{
+    margin-right: 50px;
+    margin-left: 900px;
+}
+#check:checked ~ h5{
+    margin-right: 50px;
+    margin-left: 665px;
+}
+
+.container-cards-items {
+
+    width: 400px;   
+    height: 500px;
+}
+
+footer {
+    width: 100%;
+    min-height: 250px;
+    background: #ffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+footer .boxs {
+    width: 320px;
+    min-height: 150px;
+    padding: 20px;
+}
+.boxs h2{
+    color: black;
+    margin-bottom: 20px;
+}
+.boxs ul li {
+    margin: 10px 0px;
+    list-style: none;
+
+}
+.boxs ul li a {
+    color: black;
+    text-decoration: none;
+}
+.boxs ul li a:hover {
+    color: #adf8a0;
+}
+@media(max-width: 950px)
+{
+    footer{
+        flex-direction: column;
+    }
+}
